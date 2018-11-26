@@ -8,4 +8,5 @@ display/x $fp
 display/x $sp
 display/x $lr
 display/5i $pc
+display/t $cpsr
 set $r0=0
