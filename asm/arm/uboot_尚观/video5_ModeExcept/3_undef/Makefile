@@ -14,11 +14,11 @@ $(BINs):
 	arm-none-eabi-objcopy -O binary $^ $@
 	cp $@ /srv/tftp/
 
-undef.o : undef.S
+undef.o : undef.s
 undef.elf : undef.o
 undef.bin : undef.elf
 
-vector.o : vector.S
+vector.o : vector.s
 vector.elf : vector.o
 vector.bin : vector.elf
 

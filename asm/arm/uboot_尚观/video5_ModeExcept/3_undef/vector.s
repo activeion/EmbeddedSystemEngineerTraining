@@ -1,3 +1,10 @@
+// qemu_uboot.sh
+// tftp 90000000 vector.bin
+// tftp 80008000 undef.bin
+// go 80008000
+
+// cgdb_arm.sh undef.elf
+
 .section .text
     b reset
     b und
@@ -10,7 +17,7 @@
 
 reset:
 und:
-    mov sp, #0x82000000 
+    mov sp, #0x82000000 //serial_puts函数需要堆栈
     
     adr r0, str @PIC
     ldr r3, serial_puts
@@ -29,5 +36,5 @@ fiq:
 serial_puts:
     .word 0x60838304
 str:
-    .asciz "undefined instruction.\n"
+    .asciz "customed abnormal:undefined instruction.\n"
 

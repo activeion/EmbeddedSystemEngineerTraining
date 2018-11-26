@@ -1,5 +1,5 @@
-# file: qemu_uboot.sh
-# usage: ./qemu_uboot.sh
+# file: cgdb_arm.sh
+# usage: ./cgdb_arm.sh debugee
 
 
 # 获取本脚本相对于当前目录的路径
@@ -11,10 +11,4 @@ echo "$S0"
 echo "$DIRNAME"
 echo "$DIR" #绝对地址
 
-sudo qemu-system-arm \
-    -machine vexpress-a9 \
-    -m 1024 \
-    -serial stdio \
-    -net nic -net tap \
-    -kernel $DIRNAME/u-boot \
-    -s
+cgdb -d arm-none-eabi-gdb -- -x $DIRNAME/script_gdb_arm  $1
