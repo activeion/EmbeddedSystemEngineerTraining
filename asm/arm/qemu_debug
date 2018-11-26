@@ -1,0 +1,7 @@
+# file: qemu_debug
+# usage: ./qemu_debug debugee
+#
+qemu-system-arm -machine vexpress-a9 -m 1024 -serial stdio -net nic -kernel $1 -S -s &
+# cgdb -d arm-none-eabi-gdb -- -ex "target remote localhost:1234"  $1
+cgdb -d arm-none-eabi-gdb -- -x ./script_gdb_arm  $1
+ps -ef |grep qemu-system-arm |awk '{print $2}'|xargs kill -9

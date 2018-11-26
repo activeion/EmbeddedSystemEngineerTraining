@@ -1,0 +1,25 @@
+     1                                  ; helloworld.asm
+     2                                  
+     3                                  SECTION .data ; Section containing initialised data
+     4 00000000 48656C6C6F20576F72-         HelloMsg:db "Hello World!",10
+     4 00000009 6C64210A           
+     5                                      HelloLen:equ $-HelloMsg 
+     6                                  
+     7                                  SECTION .bss ; Section containing uninitialized data    
+     8                                  
+     9                                  SECTION .text ; Section containing code
+    10                                  
+    11                                  global _start ; Linker needs this to find the entry point!
+    12                                  
+    13                                  _start:
+    14 00000000 90                          nop ; This no-op keeps gdbhappy...
+    15                                  
+    16 00000001 B804000000                  mov eax, 4 ; Specify sys_writecall
+    17 00000006 BB01000000                  mov ebx, 1 ; Specify FileDescriptor 1: Standard Output
+    18 0000000B B9[00000000]                mov ecx, HelloMsg ; Pass offset ofthe message
+    19 00000010 BA0D000000                  mov edx, HelloLen ; Pass the lengthof the message
+    20 00000015 CD80                        int 80H ; Make kernel call
+    21                                  
+    22 00000017 B801000000                  mov eax, 1 ; Code for ExitSyscall
+    23 0000001C BB00000000                  mov ebx, 0 ; Return a code of zero   
+    24 00000021 CD80                        int 80H ; Make kernel call
