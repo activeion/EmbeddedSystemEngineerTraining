@@ -33,6 +33,9 @@ _start:
     mov r1, #0x1
     movs r0, r1, lsl #1 //观察cpsr的变化
 
+    // add
+    add r0, r0, #199
+
 loop: mov r0, r0
     ldr pc, loop
     
