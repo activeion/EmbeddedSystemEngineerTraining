@@ -1,0 +1,45 @@
+
+led.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+02023400 <_start-0x10>:
+ 2023400:	00002000 	andeq	r2, r0, r0
+	...
+
+02023410 <_start>:
+ 2023410:	e59fa048 	ldr	sl, [pc, #72]	; 2023460 <_start+0x50>
+ 2023414:	e59ab000 	ldr	fp, [sl]
+ 2023418:	e38bbc03 	orr	fp, fp, #768	; 0x300
+ 202341c:	e58ab000 	str	fp, [sl]
+ 2023420:	e59fa03c 	ldr	sl, [pc, #60]	; 2023464 <_start+0x54>
+ 2023424:	e3a0b000 	mov	fp, #0
+ 2023428:	e58ab000 	str	fp, [sl]
+ 202342c:	e59fa034 	ldr	sl, [pc, #52]	; 2023468 <_start+0x58>
+ 2023430:	e3a0b001 	mov	fp, #1
+ 2023434:	e58ab000 	str	fp, [sl]
+ 2023438:	e59fa02c 	ldr	sl, [pc, #44]	; 202346c <_start+0x5c>
+ 202343c:	e3a0b010 	mov	fp, #16
+ 2023440:	e58ab000 	str	fp, [sl]
+ 2023444:	e59fa024 	ldr	sl, [pc, #36]	; 2023470 <_start+0x60>
+ 2023448:	e3a0b002 	mov	fp, #2
+ 202344c:	e58ab000 	str	fp, [sl]
+ 2023450:	e59fa01c 	ldr	sl, [pc, #28]	; 2023474 <_start+0x64>
+ 2023454:	e3a0b001 	mov	fp, #1
+ 2023458:	e58ab000 	str	fp, [sl]
+ 202345c:	eafffff8 	b	2023444 <_start+0x34>
+ 2023460:	1002330c 	andne	r3, r2, ip, lsl #6
+ 2023464:	11000c08 	tstne	r0, r8, lsl #24
+ 2023468:	11000100 	mrsne	r0, (UNDEF: 16)
+ 202346c:	11000060 	tstne	r0, r0, rrx
+ 2023470:	11000064 	tstne	r0, r4, rrx
+ 2023474:	11000104 	tstne	r0, r4, lsl #2
+ 2023478:	00001941 	andeq	r1, r0, r1, asr #18
+ 202347c:	61656100 	cmnvs	r5, r0, lsl #2
+ 2023480:	01006962 	tsteq	r0, r2, ror #18
+ 2023484:	0000000f 	andeq	r0, r0, pc
+ 2023488:	00543405 	subseq	r3, r4, r5, lsl #8
+ 202348c:	01080206 	tsteq	r8, r6, lsl #4
+ 2023490:	Address 0x0000000002023490 is out of bounds.
+
