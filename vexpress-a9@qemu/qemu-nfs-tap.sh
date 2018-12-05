@@ -6,7 +6,7 @@ sudo qemu-system-arm \
     -kernel $KERN -serial stdio \
     -dtb ./vexpress-v2p-ca9.dtb \
     -append "root=/dev/nfs rw console=ttyAMA0 \
-    nfsroot=192.168.0.11:/home/jizh/git/busybox/rootfs,proto=tcp,vers=3 \
+    nfsroot=192.168.0.11:/srv/nfs/rootfs,proto=tcp,vers=3 \
     ip=192.168.0.110:192.168.0.11:192.168.0.1:255.255.255.0:::off \
     nfsrootdebug" \
     -net tap \
