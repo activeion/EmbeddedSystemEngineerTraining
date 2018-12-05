@@ -19,10 +19,10 @@ qemu-system-arm \
     -kernel $DIRNAME/$KERN -serial stdio \
     -dtb $DIRNAME/vexpress-v2p-ca9.dtb \
     -append "root=/dev/nfs rw console=ttyAMA0 \
-    nfsroot=10.0.2.2:/srv/nfs/rootfs,proto=tcp,vers=3 rw \
-    ip=dhcp \
-    init=/sbin/init \
-    nfsrootdebug" \
+        nfsroot=10.0.2.2:/srv/nfs/rootfs,proto=tcp,vers=3 rw \
+        ip=dhcp \
+        init=/sbin/init \
+        nfsrootdebug loglevel=8" \
     -net nic \
     -net user \
     -S -s  

@@ -6,7 +6,7 @@ qemu-system-arm \
     -m 1024M \
     -kernel $KERN -serial stdio \
     -append "root=/dev/mmcblk0 rw console=ttyAMA0 \
-    ip=dhcp" \
+    ip=dhcp loglevel=8" \
     -sd ./a9rootfs.ext3 \
     -net nic \
     -net user \

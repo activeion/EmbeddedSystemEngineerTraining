@@ -6,7 +6,7 @@ sudo qemu-system-arm \
     -dtb ./vexpress-v2p-ca9.dtb \
     -append "ip=dhcp,root=/dev/nfs rw console=ttyAMA0 \
     nfsroot=192.168.2.127:/home/jizh/git/busybox/rootfs rw \
-    nfsrootdebug" \
+    nfsrootdebug loglevel=8" \
     -netdev bridge,id=n0 \
     -device netdev=n0 \
     #-device virtio-net-device,netdev=n0 \

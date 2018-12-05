@@ -9,7 +9,7 @@ qemu-system-arm \
     nfsroot=10.0.2.2:/srv/nfs/rootfs,proto=tcp,vers=3 rw \
     ip=dhcp \
     init=/sbin/init \
-    nfsrootdebug" \
+    nfsrootdebug loglevel=8" \
     -net nic \
     -net user \
 
